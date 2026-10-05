@@ -1,0 +1,108 @@
+{
+  "optical_flow": [
+    {
+      "id": 1,
+      "motion": "Horizontal camera pan (3 px/frame) + orbiting textured disk",
+      "t": 150,
+      "n_corners": 400,
+      "lk_mean_err": 0.08293117085735499,
+      "lk_median_err": 0.0005418481887318194,
+      "dense_grid_mee": 0.025473614195717247,
+      "pair_image": "/static/flow_pair_1.png",
+      "flow_gif": "/static/flow_1.gif",
+      "flow_video": "/static/flow_viz_1.mp4"
+    },
+    {
+      "id": 2,
+      "motion": "Dolly zoom (radial flow) + oscillating textured square",
+      "t": 150,
+      "n_corners": 400,
+      "lk_mean_err": 0.121609901585883,
+      "lk_median_err": 0.09072128702348745,
+      "dense_grid_mee": 0.11532575743706834,
+      "pair_image": "/static/flow_pair_2.png",
+      "flow_gif": "/static/flow_2.gif",
+      "flow_video": "/static/flow_viz_2.mp4"
+    }
+  ],
+  "sfm": {
+    "K": [
+      [
+        600.0,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        600.0,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "focal": 600.0,
+    "principal_point": [
+      320.0,
+      240.0
+    ],
+    "n_points": 20,
+    "n_boundary": 10,
+    "n_interior": 10,
+    "cameras": [
+      {
+        "view": 1,
+        "C": [
+          0.0,
+          0.0,
+          500.0
+        ],
+        "homography_rel_err": 4.400016112385877e-14
+      },
+      {
+        "view": 2,
+        "C": [
+          -300.0,
+          40.0,
+          480.0
+        ],
+        "homography_rel_err": 7.510756093452813e-14
+      },
+      {
+        "view": 3,
+        "C": [
+          300.0,
+          -40.0,
+          520.0
+        ],
+        "homography_rel_err": 2.6616819584229102e-14
+      },
+      {
+        "view": 4,
+        "C": [
+          0.0,
+          200.0,
+          450.0
+        ],
+        "homography_rel_err": 6.226417168002792e-14
+      }
+    ],
+    "views": [
+      "/static/sfm_view_1.png",
+      "/static/sfm_view_2.png",
+      "/static/sfm_view_3.png",
+      "/static/sfm_view_4.png"
+    ],
+    "reconstruction": "/static/sfm_reconstruction.png",
+    "planar_mean_err": 1.3693241889540861e-10,
+    "planar_max_err": 3.42116961275794e-10,
+    "tri_mean_err": 1.4368116604842284e-13,
+    "tri_max_err": 5.952546381385788e-13,
+    "tri_z_min": -6.859249981986292e-14,
+    "tri_z_max": 1.4792217794147272e-13,
+    "boundary_area_true": 4400.0,
+    "boundary_area_rec": 4399.9999999812
+  }
+}

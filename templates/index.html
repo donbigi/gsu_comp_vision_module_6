@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Optical Flow &amp; Structure from Motion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <h1>Optical Flow <span>&amp;</span> Structure from Motion</h1>
+      <p class="sub">Dense (Farnebäck) and sparse (Lucas–Kanade) optical flow on two synthetic
+        30 s videos, validated against exact ground truth — plus a planar structure-from-motion
+        reconstruction from four calibrated viewpoints.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card controls">
+      <span class="run-hint">Results are precomputed and served statically — the heavy flow / SfM
+        pipeline runs offline via <code>generate_results.py</code>; no compute runs in the pod.</span>
+    </section>
+
+    <!-- ============ PART A: OPTICAL FLOW ============ -->
+    <section id="flow">
+      <h2 class="section-title">1 · Optical flow &amp; motion tracking</h2>
+      <div id="flow-cards"></div>
+    </section>
+
+    <!-- ============ PART B: STRUCTURE FROM MOTION ============ -->
+    <section id="sfm">
+      <h2 class="section-title">2 · Structure from motion (planar object)</h2>
+
+      <div class="metrics" id="sfm-metrics">
+        <div class="metric"><div class="metric-label">Homography rel. error</div><div class="metric-value good" id="s-homography">—</div></div>
+        <div class="metric"><div class="metric-label">Planar mean error</div><div class="metric-value good" id="s-planar">—</div></div>
+        <div class="metric"><div class="metric-label">Triangulation mean</div><div class="metric-value good" id="s-tri">—</div></div>
+        <div class="metric"><div class="metric-label">Boundary area</div><div class="metric-value good" id="s-area">—</div></div>
+      </div>
+
+      <div class="card block">
+        <h3>Camera intrinsics K</h3>
+        <pre id="s-k" class="mono-block">—</pre>
+        <h3>Four calibrated viewpoints <small>(camera centre C, world mm)</small></h3>
+        <div class="table-wrap"><table id="s-cameras"></table></div>
+      </div>
+
+      <h3 class="subsection-title">The four viewpoints</h3>
+      <div class="strip" id="sfm-views"></div>
+
+      <h3 class="subsection-title">Reconstruction — true vs recovered boundary &amp; point cloud</h3>
+      <figure class="panel full">
+        <img id="sfm-reconstruction" alt="structure from motion reconstruction" />
+        <figcaption>Four viewpoints + true vs reconstructed boundary (homography &amp; triangulation) + triangulated point cloud coloured by Z.</figcaption>
+      </figure>
+    </section>
+
+    <div class="error" id="error" hidden></div>
+  </main>
+
+  <footer class="wrap">
+    <p>GSU Computer Vision — Module 6 · Optical flow &amp; structure from motion.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

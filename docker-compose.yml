@@ -1,0 +1,8 @@
+services:
+  flow:
+    build: .
+    image: gsu-cv-module6-flow:latest
+    container_name: optical-flow-sfm-demo
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Generated video is large — keep it out of git (upload to Classroom / YouTube)
+data/*.mp4
+data/*.avi
+
+# Web-demo media: the full-resolution flow videos live in static/ for the
+# Docker image but are regenerable via generate_results.py, so keep them out
+# of git (the smaller GIF previews and PNG figures are committed).
+static/*.mp4
+
+# Assignment report (kept local, not committed to the public repo)
+DERIVATIONS.md
+DERIVATIONS.pdf
+
+# Virtual environments / OS / editor
+.venv/
+venv/
+.DS_Store

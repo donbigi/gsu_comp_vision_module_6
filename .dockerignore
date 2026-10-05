@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.git/
+.DS_Store
+.claude/
+.venv/
+venv/
+data/
+*.pdf
+*.docx
+synthetic_data.py
+optical_flow.py
+structure_from_motion.py
+generate_results.py
